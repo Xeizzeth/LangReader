@@ -1,0 +1,28 @@
+#:kivy 1.0.9
+
+<MainWindow>
+    orientation: 'vertical'
+    StackLayout:
+        orientation: 'lr-tb'
+        id: text_layout
+    Button:
+        id: f_but
+        text: 'Import text'
+        on_press: root.check_status(f_but)
+        size_hint: 1, 0.05
+    TextInput:
+        id: text_input
+        text: 'On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.'
+        size_hint: 1, 0.25
+
+<WordPopup@Popup>:
+    auto_dismiss: False
+    size: 100, 250
+    size_hint: 0.5, 0.25
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Here will be all possible translations'
+        Button:
+            text: 'Close'
+            on_release: root.dismiss()
